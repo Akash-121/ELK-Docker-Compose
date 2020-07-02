@@ -37,7 +37,7 @@ paths:
 - /home/appmin/logs/lifemed.test.nginx.log
 output.logstash:
 # The Logstash hosts
-hosts: [&quot;192.168.1.111:5044&quot;]
+hosts: ["192.168.1.111:5044"]
 ```
 Press ctr+x, Save and close it. Now start the filebeat service by adding this command:
 
@@ -58,13 +58,13 @@ And add the follwing lines into the conf file………
 ```
 input {
 beats {
-port =&gt; &quot;5044&quot;
+port => "5044";
 }
 }
 output {
 elasticsearch {
-hosts =&gt; [ &quot;192.168.1.111:9200&quot; ]
-index =&gt; &quot;logsview&quot;
+hosts => [ "192.168.1.111:9200" ]
+index => "logsview"
 }
 }
 ```
